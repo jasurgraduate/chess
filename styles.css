@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    margin: 0;
+    color: #fff;
+    height: 100vh;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.captured-pieces {
+    width: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    transform-style: preserve-3d;
+}
+
+#chessboard {
+    width: 30rem; /* Adjusted to fit 60% of the viewport height with square dimensions */
+    height: 30rem; /* Adjusted to fit 60% of the viewport height with square dimensions */
+    display: grid;
+    grid-template-columns: repeat(8, 3.75rem); /* Each column is 3.75rem */
+    grid-template-rows: repeat(8, 3.75rem); /* Each row is 3.75rem */
+    gap: 0;
+    transition: transform 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    transform-style: preserve-3d;
+    opacity: 1;
+}
+
+.square {
+    width: 3.75rem; /* 3.75rem */
+    height: 3.75rem; /* 3.75rem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.square:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.white {
+    background-color: #a0a0a0;
+}
+
+.black {
+    background-color: #202020;
+}
+
+.piece {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    user-select: none;
+    transition: transform 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+.white-piece {
+    color: #fff;
+}
+
+.black-piece {
+    color: #000;
+}
+
+#turnIndicator {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    #chessboard {
+        width: 25rem; /* Adjust to fit 60% of the viewport width on smaller screens */
+        height: 25rem; /* Adjust to fit 60% of the viewport width on smaller screens */
+        grid-template-columns: repeat(8, 3.125rem); /* Each column is 3.125rem */
+        grid-template-rows: repeat(8, 3.125rem); /* Each row is 3.125rem */
+    }
+    .square {
+        width: 3.125rem; /* 3.125rem */
+        height: 3.125rem; /* 3.125rem */
+        font-size: 1.3rem;
+    }
+}
