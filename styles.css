@@ -55,11 +55,11 @@ body {
 }
 
 .white {
-    background-color: #ffffff;
+    background-color: #b0b0b0; /* Light grey */
 }
 
 .black {
-    background-color: #d3d3d3;
+    background-color: #303030; /* Dark grey */
 }
 
 .piece {
@@ -74,11 +74,11 @@ body {
 }
 
 .white-piece {
-    color: #fff;
+    color: #FFD700; /* Bright gold */
 }
 
 .black-piece {
-    color: #000;
+    color: #001f3f; /* Deep navy */
 }
 
 #turnIndicator {
