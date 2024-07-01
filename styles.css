@@ -7,7 +7,7 @@ body {
     color: #fff;
     height: 100vh;
     justify-content: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #container {
@@ -98,7 +98,18 @@ body {
     .square {
         width: 2.5rem; /* 2.5rem */
         height: 2.5rem; /* 2.5rem */
-        font-size: 1.1rem; /* Adjusted font size */
+        font-size: 1rem; /* Adjusted font size */
+    }
+
+    .piece {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bolder;
+        user-select: none;
+        transition: transform 0.8s ease-in-out, opacity 0.4s ease-in-out;
+        opacity: 1;
     }
 }
 
