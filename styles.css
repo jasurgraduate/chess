@@ -90,14 +90,15 @@ body {
 
 @media (max-width: 600px) {
     #chessboard {
-        width: 25rem; /* Adjust to fit 60% of the viewport width on smaller screens */
-        height: 25rem; /* Adjust to fit 60% of the viewport width on smaller screens */
-        grid-template-columns: repeat(8, 3.125rem); /* Each column is 3.125rem */
-        grid-template-rows: repeat(8, 3.125rem); /* Each row is 3.125rem */
+        width: 20rem; /* Adjusted width */
+        height: 20rem; /* Adjusted height */
+        grid-template-columns: repeat(8, 2.5rem); /* Each column is 2.5rem */
+        grid-template-rows: repeat(8, 2.5rem); /* Each row is 2.5rem */
     }
     .square {
-        width: 3.125rem; /* 3.125rem */
-        height: 3.125rem; /* 3.125rem */
-        font-size: 1.3rem;
+        width: 2.5rem; /* 2.5rem */
+        height: 2.5rem; /* 2.5rem */
+        font-size: 1.1rem; /* Adjusted font size */
     }
 }
+
