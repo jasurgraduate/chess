@@ -18,36 +18,58 @@ body {
     width: 100%;
 }
 
-.captured-pieces {
-    width: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    transform-style: preserve-3d;
+#chessboard {
+    width: 30rem;
+    height: 30rem;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 1;
+    border: solid white 0.1px;
 }
 
-#chessboard {
-    width: 30rem; /* Adjusted to fit 60% of the viewport height with square dimensions */
-    height: 30rem; /* Adjusted to fit 60% of the viewport height with square dimensions */
-    display: grid;
-    grid-template-columns: repeat(8, 3.75rem); /* Each column is 3.75rem */
-    grid-template-rows: repeat(8, 3.75rem); /* Each row is 3.75rem */
-    gap: 0;
-    transition: transform 0.8s ease-in-out, opacity 0.4s ease-in-out;
-    transform-style: preserve-3d;
-    opacity: 1;
+#chessboard.rotate {
+    transform: rotate(180deg);
+}
+
+#chessboard.fade-flip {
+    animation: fadeFlip 0.8s ease;
+}
+
+@keyframes fadeFlip {
+    0% {
+        opacity: 0;
+        transform: rotateY(0deg);
+    }
+    0% {
+        opacity: 0.2;
+        transform: rotateY(30deg);
+    }
+    0% {
+        opacity: 0.4;
+        transform: rotateY(60deg);
+    }
+    0% {
+        opacity: 0.6;
+        transform: rotateY(120deg);
+    }
+    100% {
+        opacity: 0.8;
+        transform: rotateY(180deg);
+    }
 }
 
 .square {
-    width: 3.75rem; /* 3.75rem */
-    height: 3.75rem; /* 3.75rem */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    width: 100%;
+    height: 100%;
 }
 
 .square:hover {
@@ -55,30 +77,30 @@ body {
 }
 
 .white {
-    background-color: #b0b0b0; /* Light grey */
+    background-color: #ebecd0;
 }
 
 .black {
-    background-color: #303030; /* Dark grey */
+    background-color: #739552;
 }
 
 .piece {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5rem;
-    font-weight: bolder;
-    user-select: none;
-    transition: transform 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    width: 90%;
+    height: 90%;
+    transition: opacity 0.8s ease, transform 0.8s ease;
     opacity: 1;
 }
 
-.white-piece {
-    color: #FFD700; /* Bright gold */
+#chessboard.rotate .piece {
+    transform: rotate(180deg);
 }
 
-.black-piece {
-    color: #001f3f; /* Deep navy */
+.piece img {
+    width: 100%;
+    height: 100%;
 }
 
 #turnIndicator {
@@ -90,25 +112,11 @@ body {
 
 @media (max-width: 600px) {
     #chessboard {
-        width: 20rem; /* Adjusted width */
-        height: 20rem; /* Adjusted height */
-        grid-template-columns: repeat(8, 2.5rem); /* Each column is 2.5rem */
-        grid-template-rows: repeat(8, 2.5rem); /* Each row is 2.5rem */
+        width: 20rem;
+        height: 20rem;
     }
-    .square {
-        width: 2.5rem; /* 2.5rem */
-        height: 2.5rem; /* 2.5rem */
-        font-size: 1rem; /* Adjusted font size */
-    }
-
-    .piece {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        font-weight: bolder;
-        user-select: none;
-        transition: transform 0.8s ease-in-out, opacity 0.4s ease-in-out;
-        opacity: 1;
+    .piece img {
+        width: 100%;
+        height: 100%;
     }
 }
