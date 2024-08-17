@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* ------------------------------------------------------------------------------------------ LAPTOP */
+@media (min-width: 768px) {
+
+
+    header {
+        align-items: center;
+        background: #1E293B;
+        color: #f0f0f0;
+        display: inline-flex;
+        height: 4rem;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        font-size: 22px;
+        width: 100%;
+        z-index: 1000;
+        /* Ensure header is above other content */
+    }
+
+    .footer {
+        align-items: center;
+        width: 100%;
+        height: 3rem;
+        margin: 0;
+        /* Set margin to 0 */
+        background: #1E293B;
+        color: rgb(251, 246, 250);
+        display: flex;
+        font-size: 18px;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fabdf2;
+        padding: 0.5rem 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        background-color: #d3699c62;
+        color: #ffffff;
+        transform: translateY(-0.3rem);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .link {
+        font-size: 1.5rem;
+    }
+
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0.5rem;
+        width: 70%;
+        height: 70%;
+    }
+
+    .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+        font-size: 2rem;
+        background-color: #fff;
+        border: 0.5px solid #333;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+        text-align: center;
+        /* Center text horizontally */
+    }
+
+    .link:hover {
+        background-color: #2e4879;
+        color: #fff;
+        border-color: #fff;
+    }
+
+
+}
+
+
+/* ------------------------------------------------------------------------------------------ MOBILE */
+@media (max-width: 767px) {
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 0.2rem;
+        width: 95%;
+        height: 95%;
+    }
+
+    .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+        font-size: 2rem;
+        background-color: #fff;
+        border: 0.5px solid #333;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+        text-align: center;
+        padding: 3rem;
+        /* Center text horizontally */
+    }
+
+    .link:hover {
+        background-color: #2e4879;
+        color: #fff;
+        border-color: #fff;
+    }
+
+
+}
